@@ -125,9 +125,9 @@ function salvar() {
   }
 
   fetch(url, {method: metodo, body: json, edirect: 'follow', headers: myHeaders})
-  .then(response => response.json())
   .then(result => {
-        if (result.idveiculo > 0) {
+        console.log(result.status)
+        if (result.status == 201) {
             mostrarAlerta("Cadastro Efetuado com Sucesso", true);
             modalCadastro.hide();
             listar();
